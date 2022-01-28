@@ -1,98 +1,27 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# route_optimization_web_service_basics
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+![Route Optimization Web Service Basics](https://blog.afi.io/content/images/size/w1600/2021/11/Screen-Shot-2021-11-06-at-9.29.59-PM.png "Route Optimization Web Service Basics")
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+Taken from: 
+- [Build your own Route Optimization API with Google Maps (Part 1 of 6)](https://blog.afi.io/build-your-own-route-optimization-api-with-google-maps/)
+- [Creating a Route with the Google Maps Directions API (Part 2 of 6)](https://blog.afi.io/creating-a-route-with-the-google-maps-directions-api/)
+- [Optimizing a Route with the Google Maps Directions API (Part 3 of 6)](https://blog.afi.io/optimizing-a-route-with-the-google-maps-directions-api/)
+- [Route Optimization Web Service Basics (Part 4 of 6)](https://blog.afi.io/route-optimization-web-service-basics/)
+- [Let's Build a Route Optimization Web Service (Part 5 of 6)](https://blog.afi.io/lets-build-a-route-optimization-web-service/)
+- [Testing our Route Optimization Web Service in Production (Part 6 of 6)](www.google.com)
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
-```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
-
-## Deploy to Heroku
-
-https://route-be.herokuapp.com/
+ How to run the app:
+ 1. cd into your project
+ 2. Install packages by running `yarn` and enter `yarn start` to run the app in development mode.
+ 3. Create a `.env` file in the root folder and add the following lines of code (be sure to replace the placeholder text with your actual API keys)
 
 ```
-heroku login
-heroku git:remote -a route-be
-git push heroku master
-heroku logs --tail
+DATABASE_URI='MONGODB_DATABASE_URI'
+GOOGLE_KEY='GOOGLE_API_KEY'
 ```
 
-## Upgrade nestjs
-```
-npm i -g @nestjs/cli@latest
-nest update -f -t latest
-npm update
-npm outdated
+The `DATABASE_URI` is the [MongoDB connection string](https://docs.mongodb.com/manual/reference/connection-string/) used to connect to a MongoDB deployment. To obtain the URI, ...
 
-npm i --save @nestjs/axios @nestjs/config @nestjs/event-emitter @nestjs/jwt @nestjs/mongoose @nestjs/passport @nestjs/schedule @nestjs/swagger bcrypt class-transformer class-validator lodash luxon mongoose nanoid passport passport-jwt passport-local passport-unique-token swagger-ui-express xlsx
-npm i --save-dev @types/bcrypt @types/lodash @types/luxon @types/multer @types/passport-jwt @types/passport-local @types/passport-unique-token
-```
+`GOOGLE_KEY` is the API key found on the Google Maps Platform > Credentials [page](https://console.cloud.google.com/projectselector2/google/maps-apis/credentials) when you log into your Google Cloud Platform console.
 
-## Helper
-Decode JWT: https://jwt.io/
+Please contact afian@afi.io if you have any questions or suggestions. Pull requests are welcome.
